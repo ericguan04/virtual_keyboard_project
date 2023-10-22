@@ -2,6 +2,7 @@ import cv2
 import mediapipe as mp
 import time
 
+#Class to implement the hand detection algorithm
 class HandDetection():
     def __init__(self, mode=False, maxHands=2, detectionCon=0.5, trackCon=0.5):
         self.mode = mode
@@ -14,6 +15,7 @@ class HandDetection():
                                         min_detection_confidence=self.detectionCon, min_tracking_confidence=self.trackCon)
         self.mpDraw = mp.solutions.drawing_utils
 
+    #Method to draw the landmarks used in the hand detection model
     def findHands(self, img, draw = True):
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         self.results = self.hands.process(imgRGB)
@@ -24,6 +26,7 @@ class HandDetection():
                     self.mpDraw.draw_landmarks(img, handLms, self.mpHands.HAND_CONNECTIONS)    
         return img
     
+    #Method to return the coordinates of the entered hand landmark
     def findPosition(self, img, handNumber=0, draw=True):
         lmList = []
 
@@ -39,6 +42,7 @@ class HandDetection():
                     cv2.circle(img, (cx,cy), 5, (255,0,255), cv2.FILLED)
         return lmList
 
+#Tester for the class
 def main():
     pTime = 0
     cTime = 0

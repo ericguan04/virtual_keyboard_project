@@ -7,7 +7,6 @@ pTime = 0
 cTime = 0
 capture = cv2.VideoCapture(0)
 
-#Testing the class
 detector = handTracker.HandDetection()
 
 while True:
