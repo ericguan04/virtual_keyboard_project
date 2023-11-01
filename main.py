@@ -30,3 +30,5 @@ while True:
 
 capture.release()
 cv2.destroyAllWindows()
+
+#put flask code here
