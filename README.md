@@ -5,4 +5,3 @@ Future Ideas: Learn how to use Flask
 Try to put hand detection on the web
 Think about ways to implement the hand tracking module
 Fix issues with database (read documentation)
-Save data onto the database?
